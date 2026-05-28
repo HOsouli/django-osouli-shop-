@@ -1,0 +1,52 @@
+<footer class="site__footer">
+    <div class="site-footer">
+        <div class="container">
+            <div class="row site-footer__widgets">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="site-footer__widget footer-contacts">
+                        <h5>تماس با ما</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> ملایر، خیابان شهدا</li>
+                            <li><i class="fas fa-phone-alt"></i> <span class="ltr_text">081-45231</span></li>
+                            <li><i class="fas fa-envelope"></i> info@example.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="site-footer__widget footer-links">
+                        <h5>اطلاعات</h5>
+                        <ul>
+                            <li><a href="{% url 'pages:about-us' %}">درباره ما</a></li>
+                            <li><a href="{% url 'pages:contact-us' %}">تماس با ما</a></li>
+                            <li><a href="{% url 'pages:rules' %}">قوانین و مقررات</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="site-footer__widget footer-links">
+                        <h5>حساب کاربری</h5>
+                        <ul>
+                            <li><a href="{% url 'accounts:login' %}">ورود</a></li>
+                            <li><a href={% url 'accounts:register' %}>ثبت نام</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="site-footer__widget footer-newsletter">
+                        <h5>ما را در شبکه‌های اجتماعی دنبال کنید</h5>
+                        <ul class="social-links">
+                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fas fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p>کلیه حقوق و امتیازات این وبسایت متعلق است به <a href="#">آکادمی درسمن</a></p>
+            </div>
+        </div>
+    </div>
+</footer>

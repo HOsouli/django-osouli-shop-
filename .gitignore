@@ -1,0 +1,26 @@
+# Environments
+venv/
+env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Secrets and sensitive files
+.env
+*.env
+secrets.yaml
+local_settings.py
+
+# Database files (if you use SQLite locally)
+db.sqlite3
+db.sqlite3-journal
+
+# Media files (if you don't want to commit uploaded user files)
+media/
+
+# Other common ignores
+*.log
+.DS_Store
+Thumbs.db

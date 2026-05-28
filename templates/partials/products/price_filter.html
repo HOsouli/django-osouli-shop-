@@ -1,0 +1,36 @@
+{% load humanize %}
+<div class="widget-filters__item">
+    <div id="priceAccordion">
+        <div class="card" style="border: none; color:#868686;">
+            <div class="card-header d-flex justify-content-between align-items-center" style="padding: 0 0 10px;">
+                <button class="filter__title"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapsePrice"
+                        style="color:#000; background:none; border:none;">
+                    قیمت
+                </button>
+                <!-- اینجا قیمت جاری روبروی عنوان -->
+                <span id="current-price-header" style="font-weight:bold;">
+                    {{ price_max|intcomma }} تومان
+                </span>
+            </div>
+            <div id="collapsePrice" class="collapse show" data-parent="#priceAccordion">
+                <div class="card-body" style="padding: 0;">
+                    <form id="price-filter-form" method="GET">
+                        <input type="range"
+                                name="price"
+                                id="price-slider"
+                                min="{{ price_min }}"
+                                max="{{ price_max }}"
+                                value="{{ price_max }}">
+                        <div class="d-flex justify-content-between mt-1">
+                            <span id="price-min">{{ price_min|intcomma }} تومان</span>
+                            <span id="price-max">{{ price_max|intcomma }} تومان</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
