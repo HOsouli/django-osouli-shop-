@@ -43,7 +43,7 @@ def delete_product_image(sender, **kwargs):
 SALE_WAREHOUSE_TYPE_ID = 2   # خروجی/فروش
 @receiver(post_save, sender=Warehouse)
 def update_product_sales_count(sender, instance, **kwargs):
-    if instance.product and isinstance.warehouse_type_id == SALE_WAREHOUSE_TYPE_ID:
+    if instance.product and instance.warehouse_type_id == SALE_WAREHOUSE_TYPE_ID:
         total_sales= Warehouse.objects.filter(
             product = instance.product,
             warehouse_type_id = SALE_WAREHOUSE_TYPE_ID   # فقط فروش‌ها
