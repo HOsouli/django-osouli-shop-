@@ -26,14 +26,14 @@ class ProductSearchView(ListView):
 
 # _____________________________________________________________________
     # یه تابع نوشتم که گروه اصلی رو برای من برمیگردونه
-def get_root_groop():
+def get_root_group():
         return ProductGroup.objects.filter(Q(is_active=True)& Q(group_parent=None))  # برای دوتا شرط استفاده میکنمQ چون دوتا شرط میخوام بزارم هم فعال باشن (موجودی یاشه از اون کالا) هم والد نداشته باشن (خودشون ریشه باشن) از
 
 # _____________________________________________________________________
 # ارزانترین محصولات
 def get_cheapest_products(request, *args, **kwargs):
     products=Product.objects.filter(is_active=True).order_by('price')[:5]   # اونایی که فعال هستن و برحسب قیمت مرتبشون کنم و از بین همشون فقط 3 تاش رو برای من بیار
-    product_groups=get_root_groop()
+    product_groups=get_root_group()
     context={
         'products':products,
         'product_groups':product_groups
@@ -55,10 +55,10 @@ def get_cheapest_products(request, *args, **kwargs):
 # جدیدترین محصولات
 def get_last_products(request, *args, **kwargs):
     products=Product.objects.filter(is_active=True).order_by('-published_date')[:5]   # برای اینکه بخوایم برعکسش رو بیاریم کافیه یه دش پشتش بزارم از آخر به اول واکشی میکنه
-    product_groups=get_root_groop()
+    product_groups=get_root_group()
     context={
         'products': products,
-        'products_groups': product_groups
+        'product_groups': product_groups
     }
     return render(request, 'products_app/partials/last_products.html', context)
 
@@ -66,7 +66,7 @@ def get_last_products(request, *args, **kwargs):
 # پر فروش ترین محصولات
 def get_top_selling_products(request, *args, **kwargs):
     products=Product.objects.filter(is_active=True, sales_count__gt=0).order_by('-sales_count')[:10]   # فقط 7 تای اول
-    product_groups=get_root_groop()
+    product_groups=get_root_group()
     context={
         'products': products,
         'product_groups': product_groups

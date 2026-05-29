@@ -10,7 +10,7 @@ class Payment(models.Model):
     update_date = models.DateTimeField(auto_now=True, verbose_name='تاریخ ویرایش پرداخت')
     amount = models.DecimalField(max_digits=15, decimal_places=0, verbose_name='مبلغ پرداخت')
     description = models.TextField(verbose_name='توضیخات پرداخت')
-    is_finaly = models.BooleanField(default=False, verbose_name='وضعیت پرداخت')  # ش میکنیمTrue بعد از اینکه از درگاه برمیگرده اگه پرداخت کرده بود  False لحظه اول
+    is_finally = models.BooleanField(default=False, verbose_name='وضعیت پرداخت')  # ش میکنیمTrue بعد از اینکه از درگاه برمیگرده اگه پرداخت کرده بود  False لحظه اول
 
 # نکته خیلی مهم حتما حتما همیشه برای درگاه های پرداخت این دوتا فیلد رو باید در نظر بگیریم
     status_code = models.IntegerField(verbose_name='کد وضعیت درگاه پرداخت', null=True, blank=True)  # استفاده کنیم و اینکه چون اول کار ما اینو نداریم اول کار باید نال و بلنکش رو تورو کنیم IntegerField این کد وضعیت یه کدیه که همه درگاه های پرداخت داره و ما بهتره بنویسیم اینو و ذخیره کنیم و چون یه عدد باید از

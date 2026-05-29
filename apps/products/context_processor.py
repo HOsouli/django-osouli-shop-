@@ -1,7 +1,6 @@
 from django.db.models import Count
 from .models import ProductGroup
 
-from apps.products.models import ProductGroup
 
 def navbar_categories(request):
     # 3 تا گروه اصلی (دقیقاً مثل navbar.html)

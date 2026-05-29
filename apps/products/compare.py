@@ -17,7 +17,7 @@ class CompareProduct:
 # مثلا هربار که تورو متد ادش رو صدا زدم تو ذهنت داشته باش یه پروداکت آیدی براش میفرستم که عدد و باید به اینت تبدیلش کنم چون سشن فقط به رشته ذخیره میکنه
 # و اگر داخلش نبود بیا اضافه کن این سش رو داخلش
     def add_to_compare_product(self, productId):
-        ptoductId=int(productId)
+        productId=int(productId)
         if productId not in self.compare_product:
             self.compare_product.append(productId)
             self.count=len(self.compare_product)   # و نهایتا بعد از اینکه بهش اضافه کردم تعداد عناصر لیست رو حساب میکنم و میریزمش تو کانت
