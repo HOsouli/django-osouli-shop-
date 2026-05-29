@@ -1,0 +1,29 @@
+{% load static %}
+{% block content %}
+    <div class='block-categories__list'>
+    {% for group in product_groups %}
+        <div class="block-categories__item category-card category-card--layout--compact">
+            <div class="category-card__body">
+                <div class="category-card__image">
+                    <a href="{% url 'products:items' slug=group.slug %}">
+                        {% if group.image_name %}
+                            <img src="{{ media_url }}{{ group.image_name }}" alt="{{group.group_title}}">
+                        {% else %}
+                            <img src="{% static 'images/no-image.jpg' %}" alt="بدون تصویر">
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="category-card__content">
+                    <div class="category-card__name">
+                        <a href="{% url 'products:items' slug=group.slug %}">
+                            {{group.group_title}}
+                        </a>
+                    </div>
+                    <div class="category-card__products">{{group.products_of_group.all|length}} محصول</div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <a href="{% url 'products:product_groups' %}">همه</a>
+    </div>
+{% endblock %}

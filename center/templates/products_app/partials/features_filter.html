@@ -1,0 +1,40 @@
+<div class="widget-filters__item">
+    {% for feature, values in feature_dict.items %}
+        <div class="filter" data-collapse-item>
+            <button type="button" class="filter__title" data-collapse-trigger
+                    style="color: #000; background:none; border:none;">
+                {{ feature.feature_title }}
+                <svg class="filter__arrow" width="12px" height="7px">
+                    <use xlink:href="{{ media_url }}images/sprite.svg#arrow-rounded-down-12x7"></use>
+                </svg>
+            </button>
+            <div class="filter__body" data-collapse-content>
+                <div class="filter-list">
+                    {% if values %}
+                        {% for value in values %}
+                        <label class="filter-list__item d-flex align-items-center mb-1">
+                            <span class="filter-list__input input-check mr-2">
+                                <span class="input-check__body">
+                                    <input id="feature_{{ feature.id }}_value_{{ value.id }}"
+                                            name="feature"
+                                            value="{{ value.id }}"
+                                            type="checkbox"
+                                            class="input-check__input"
+                                            {% if value.id|stringformat:"s" in selected_features %} checked {% endif %}/>
+                                    <span class="input-check__box"></span>
+                                    <svg class="input-check__icon" width="9px" height="7px">
+                                        <use xlink:href="{{ media_url }}images/sprite.svg#check-9x7"></use>
+                                    </svg>
+                                </span>
+                            </span>
+                            <span class="filter-list__title">{{ value.value_title }}</span>
+                        </label>
+                        {% endfor %}
+                    {% else %}
+                        <p class="text-muted mb-0">ویژگی‌ای برای این گروه موجود نیست.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

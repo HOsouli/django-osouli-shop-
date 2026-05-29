@@ -1,0 +1,40 @@
+<div class="block-slideshow block-slideshow--layout--full block">
+    <div class="container-fluid p-0">
+        <div class="col-12">
+            <div class="block-slideshow__body">
+                <div class="owl-carousel hero-slider">
+                    {% for slide in sliders %}
+                        <div class="hero-slide">
+                            {% if slide.slider_link %}
+                                <a href="{{ slide.slider_link }}" target="_blank">
+                            {% endif %}
+
+                            <img src="{{ media_url }}{{ slide.image_name }}"
+                                class="hero-slide-image"
+                                alt="{{ slide.slider_title1 }}">
+
+                            {% if slide.slider_link %}
+                                </a>
+                            {% endif %}
+
+                            {% if slide.slider_title1 or slide.slider_title2 or slide.slider_title3 %}
+                                <div class="hero-content">
+                                    {% if slide.slider_title1 %}
+                                        <h2 class="hero-title">{{ slide.slider_title1 }}</h2>
+                                    {% endif %}
+                                    {% if slide.slider_title2 %}
+                                        <p class="hero-subtitle">{{ slide.slider_title2 }}</p>
+                                    {% endif %}
+                                    {% if slide.slider_title3 %}
+                                        <p class="hero-subtitle-small">{{ slide.slider_title3 }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

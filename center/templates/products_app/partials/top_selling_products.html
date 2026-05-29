@@ -1,0 +1,10 @@
+<div class="block block-products-carousel" data-layout="grid-5">
+    <div class="container">
+{% include 'partials/products/root_group.html' with title='پر فروشترین محصولات '%}
+        <div class="product-flexbox grid-layout">
+            {% for product in products %}
+                {% include 'partials/products/products_box.html' with type=4 %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<!-- desktop site__header -->
+<header class="site__header d-lg-block d-none">
+    <div class="site-header sticky-header">
+        <!-- topbar -->
+        <div class="site-header__topbar topbar">
+            <div class="topbar__container container">
+                <div class="topbar__row">
+                    <div class="topbar__item topbar__item--link"><a class="topbar-link"
+                            href="{% url 'pages:about-us' %}">درباره ما</a></div>
+                    <div class="topbar__item topbar__item--link"><a class="topbar-link"
+                            href="{% url 'pages:contact-us' %}">تماس با ما</a></div>
+                    <div class="topbar__spring"></div>
+                    <div class="topbar__item">
+                        <div class="topbar-dropdown">
+                            {% if user.is_authenticated %}
+                                <button class="topbar-dropdown__btn" type="button">
+                                    <a href="{% url 'accounts:userpanel' %}" class="topbar-link">پنل کاربری</a>
+                                    <i class="fa fa-user"></i>
+                                </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- middle section -->
+        <div class="site-header__middle container">
+            <div class="site-header__logo">
+                <a href="{% url 'main:index' %}">
+                    <img src="{{ media_url }}images/kalacenter.png" alt="Logo">
+                </a>
+            </div>
+
+
+            <div class="site-header__search">
+                <form class="pro-search" method="GET" action="{% url 'search:search_view' %}">
+                    <div class="pro-search__wrapper">
+                        <i class="fa fa-search search-icon"></i>
+                        <input type="text" name="q" placeholder="جستجو در محصولات..." autocomplete="off">
+                        <button type="submit">جستجو</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="site-header__phone">
+                <div class="site-header__phone-title">پشتیبانی</div>
+                <div class="site-header__phone-number"><span class="ltr_text">081-45231</span></div>
+            </div>
+        </div>
+
+        {% include 'partials/navbar.html' %}
+    </div>
+</header>
+<!-- desktop site__header / end -->

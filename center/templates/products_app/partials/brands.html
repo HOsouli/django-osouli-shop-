@@ -1,0 +1,45 @@
+<div class="widget-filters__item">
+    <div id="accordionBrands">
+        <div class="card" style="border: none; color: #868686;">
+            <div class="card-header" style="padding: 0 10px;">
+                <button class="filter__title collapse-trigger"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseBrand"
+                        aria-expanded="true"
+                        style="color: #000; background:none; border:none;">
+                    برندها
+                    <svg class="filter__arrow" width="12px" height="7px">
+                        <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                    </svg>
+                </button>
+            </div>
+            <div id="collapseBrand" class="collapse show" data-parent="#accordionBrands">
+                <div class="card-body" style="padding: 0;">
+                    {% for brand in brands %}
+                    <label class="filter-list__item">
+                        <span class="filter-list__input input-check">
+                            <span class="input-check__body">
+                                <input id="item_{{ brand.id }}"
+                                        name="brand"
+                                        value="{{ brand.id }}"
+                                        type="checkbox"
+                                        class="input-check__input"
+                                            {% if request.GET.brand %}
+                                                {% if request.GET.brand == brand.id|stringformat:"s" or brand.id|stringformat:"s" in request.GET.brand %} checked {% endif %}
+                                            {% endif %}/>
+                                <span class="input-check__box"></span>
+                                <svg class="input-check__icon" width="9px" height="7px">
+                                    <use xlink:href="{{ media_url }}images/sprite.svg#check-9x7"></use>
+                                </svg>
+                            </span>
+                        </span>
+                        <span class="filter-list__title">{{ brand.brand_title }}</span>
+                        <span class="filter-list__counter">{{ brand.product_of_brands.all|length }}</span>
+                    </label>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+{% extends 'main_template.html' %}
+{% load humanize %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-9">
+            <h1 class="mb-3">
+                {{ post.title }}
+            </h1>
+            <p class="text-muted">
+                {{ post.published_date|date:"Y/m/d" }}
+                &nbsp;
+                <i class="fa fa-eye"></i>
+                {{ post.views }}
+            </p>
+            <div class="mb-4">
+                <span class="badge badge-info text-white p-2">{{ post.group.title }}</span>
+            </div>
+            <div>
+                {{ post.content|safe }}
+            </div>
+
+            <!-- محصولات مرتبط -->
+            {% if post.related_products.all %}
+                <hr>
+                <h4 class="mt-4 mb-3">
+                    محصولات مرتبط
+                </h4>
+                <div class="row">
+                    {% for product in post.related_products.all %}
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img src="{{ product.image_name.url }}" class="card-img-top">
+                                </a>
+                                <div class="card-body">
+                                    <h6>
+                                        <a href="{{ product.get_absolute_url }}">
+                                            {{ product.product_name }}
+                                        </a>
+                                    </h6>
+                                    <p class="text-success">
+                                        {{ product.price|intcomma }}
+                                        تومان
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <!-- سایدبار -->
+        <div class="col-lg-3">
+            <div class="card mb-4">
+                <div class="card-header">
+                    مقالات محبوب
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% for p in popular_posts %}
+                        <li class="list-group-item">
+                            <a href="{{ p.get_absolute_url }}">
+                                {{ p.title }}
+                                <br>
+                                <small class="text-muted">
+                                    <i class="fa fa-eye"></i>
+                                    {{ p.views }}
+                                </small>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
