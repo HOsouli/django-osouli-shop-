@@ -98,22 +98,22 @@ python manage.py collectstatic
 
 | Core Features | Product & Order Management | Content & User Interaction |
 |---|---|---|
-| ![Main Page](media/images/screenshots/Capture7.PNG) | ![Advanced Filtering](media/images/screenshots/Capture22.PNG) | ![Product Tabs](media/images/screenshots/Capture3.PNG) |
-| ![Product Details](media/images/screenshots/Capture17.PNG) | ![Order Checkout](media/images/screenshots/Capture20.PNG) | ![Blog Section](media/images/screenshots/Capture12.PNG) |
-| ![Shopping Cart](media/images/screenshots/Capture14.PNG) | ![User Dashboard](media/images/screenshots/Capture9.PNG) | ![Authentication](media/images/screenshots/Capture30.PNG) |
-| ![Registration](media/images/screenshots/Capture29.PNG) | ![Mobile View](media/images/screenshots/Capture19.PNG) | |
+| ![Main Page](center/media/images/screenshots/Capture7.PNG) | ![Advanced Filtering](center/media/images/screenshots/Capture22.PNG) | ![Product Tabs](center/media/images/screenshots/Capture3.PNG) |
+| ![Product Details](center/media/images/screenshots/Capture17.PNG) | ![Order Checkout](center/media/images/screenshots/Capture20.PNG) | ![Blog Section](center/media/images/screenshots/Capture12.PNG) |
+| ![Shopping Cart](center/media/images/screenshots/Capture14.PNG) | ![User Dashboard](center/media/images/screenshots/Capture9.PNG) | ![Authentication](center/media/images/screenshots/Capture30.PNG) |
+| ![Registration](center/media/images/screenshots/Capture29.PNG) | ![Mobile View](center/media/images/screenshots/Capture19.PNG) | |
 
 #### Admin Panel
 
 | Dashboard | Management | Transactions |
 |---|---|---|
-| ![Admin Dashboard](media/images/screenshots/Capture40.PNG) | ![Product Management](media/images/screenshots/Capture41.PNG) | ![Order Details](media/images/screenshots/Capture42.PNG) |
+| ![Admin Dashboard](center/media/images/screenshots/Capture40.PNG) | ![Product Management](center/media/images/screenshots/Capture41.PNG) | ![Order Details](center/media/images/screenshots/Capture42.PNG) |
 
 #### Project Architecture
 
 | File Structure |
 |---|
-| ![Project Structure](media/images/screenshots/Capture4.PNG) |
+| ![Project Structure](center/media/images/screenshots/Capture4.PNG) |
 
 
 ## هدف پروژه
