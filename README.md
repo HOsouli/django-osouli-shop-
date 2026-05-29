@@ -98,22 +98,22 @@ python manage.py collectstatic
 
 | Core Features | Product & Order Management | Content & User Interaction |
 |---|---|---|
-| ![Main Page](center/media/images/screenshots/Capture7.PNG) | ![Advanced Filtering](center/media/images/screenshots/Capture22.PNG) | ![Product Tabs](center/media/images/screenshots/Capture3.PNG) |
-| ![Product Details](center/media/images/screenshots/Capture17.PNG) | ![Order Checkout](center/media/images/screenshots/Capture20.PNG) | ![Blog Section](center/media/images/screenshots/Capture12.PNG) |
-| ![Shopping Cart](center/media/images/screenshots/Capture14.PNG) | ![User Dashboard](center/media/images/screenshots/Capture9.PNG) | ![Authentication](center/media/images/screenshots/Capture30.PNG) |
-| ![Registration](center/media/images/screenshots/Capture29.PNG) | ![Mobile View](center/media/images/screenshots/Capture19.PNG) | |
+| ![Main Page](docs/screenshots/Capture7.PNG) | ![Advanced Filtering](docs/screenshots/Capture22.PNG) | ![Product Tabs](cdocs/screenshots/Capture3.PNG) |
+| ![Product Details](docs/screenshots/Capture17.PNG) | ![Order Checkout](docs/screenshots/Capture20.PNG) | ![Blog Section](docs/screenshots/Capture12.PNG) |
+| ![Shopping Cart](docs/screenshots/Capture14.PNG) | ![User Dashboard](docs/screenshots/Capture9.PNG) | ![Authentication](docs/screenshots/Capture30.PNG) |
+| ![Registration](docs/screenshots/Capture29.PNG) | ![Mobile View](docs/screenshots/Capture19.PNG) | |
 
 #### Admin Panel
 
 | Dashboard | Management | Transactions |
 |---|---|---|
-| ![Admin Dashboard](center/media/images/screenshots/Capture40.PNG) | ![Product Management](center/media/images/screenshots/Capture41.PNG) | ![Order Details](center/media/images/screenshots/Capture42.PNG) |
+| ![Admin Dashboard](docs/screenshots/Capture40.PNG) | ![Product Management](docs/screenshots/Capture41.PNG) | ![Order Details](docs/screenshots/Capture42.PNG) |
 
 #### Project Architecture
 
 | File Structure |
 |---|
-| ![Project Structure](center/media/images/screenshots/Capture4.PNG) |
+| ![Project Structure](docs/screenshots/Capture4.PNG) |
 
 
 ## هدف پروژه
