@@ -107,7 +107,7 @@ python manage.py collectstatic
 
 | Dashboard | Management | Transactions |
 |---|---|---|
-| ![Admin Dashboard](docs/screenshots/Capture40.PNG) | ![Product Management](docs/screenshots/Capture41.PNG) | ![Order Details](docs/screenshots/Capture42.PNG) |
+| ![Admin Dashboard](docs/screenshots/Capture.PNG) | ![Product Management](docs/screenshots/Capture0.PNG) | ![Order Details](docs/screenshots/Capture1.PNG) |
 
 #### Project Architecture
 
