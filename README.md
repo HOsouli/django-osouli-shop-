@@ -94,39 +94,26 @@ python manage.py collectstatic
 ### Preview (Screenshots)
 در این بخش، تعدادی از تصاویر منتخب پروژه قرار داده شده است تا نمای کلی وب‌سایت فروشگاه اینترنتی و بخش‌های اصلی مانند صفحه اصلی، دسته‌بندی محصولات، لیست محصولات، جزئیات محصول، نظرات کاربران، سبد خرید، پنل کاربری، احراز هویت، بلاگ و همچنین پنل مدیریت (Admin Panel) نمایش داده شود.
 
-### User Interface (Web Pages)
-- Home Page
-- Categories & Featured Products
-- Product Listing + Filtering
-- Product Details
-- Product Reviews & Comments
-- Shopping Cart
-- User Panel / Profile
-- Register
-- Login
-- Password Recovery
-- Blog List
+#### User Interface (Client Side)
 
-![Home Page](media/images/screenshots/Capture7.PNG)
-![Categories & Featured](media/images/screenshots/Capture4.PNG)
-![Product Listing + Filters](media/images/screenshots/Capture22.PNG)
-![Product Details](media/images/screenshots/Capture17.PNG)
-![Product Reviews & Comments](media/images/screenshots/Capture18.PNG)
-![Shopping Cart](media/images/screenshots/Capture14.PNG)
-![User Panel / Profile](media/images/screenshots/Capture9.PNG)
-![Register](media/images/screenshots/Capture29.PNG)
-![Login](media/images/screenshots/Capture30.PNG)
-![Password Recovery](media/images/screenshots/Capture6.PNG)
-![Blog List](media/images/screenshots/Capture12.PNG)
+| Core Features | Product & Order Management | Content & User Interaction |
+|---|---|---|
+| ![Main Page](media/images/screenshots/Capture7.PNG) | ![Advanced Filtering](media/images/screenshots/Capture22.PNG) | ![Product Tabs](media/images/screenshots/Capture3.PNG) |
+| ![Product Details](media/images/screenshots/Capture17.PNG) | ![Order Checkout](media/images/screenshots/Capture20.PNG) | ![Blog Section](media/images/screenshots/Capture12.PNG) |
+| ![Shopping Cart](media/images/screenshots/Capture14.PNG) | ![User Dashboard](media/images/screenshots/Capture9.PNG) | ![Authentication](media/images/screenshots/Capture30.PNG) |
+| ![Registration](media/images/screenshots/Capture29.PNG) | ![Mobile View](media/images/screenshots/Capture19.PNG) | |
 
+#### Admin Panel
 
-### Admin Panel (Django Admin)
-- Admin Dashboard / Products Management
-- Add / Edit Product Form
+| Dashboard | Management | Transactions |
+|---|---|---|
+| ![Admin Dashboard](media/images/screenshots/Capture40.PNG) | ![Product Management](media/images/screenshots/Capture41.PNG) | ![Order Details](media/images/screenshots/Capture42.PNG) |
 
-![Admin Dashboard](media/images/screenshots/Capture.PNG)
-![Admin - Products](media/images/screenshots/Capture0.PNG)
-![Admin - Add/Edit Product](media/images/screenshots/Capture1.PNG)
+#### Project Architecture
+
+| File Structure |
+|---|
+| ![Project Structure](media/images/screenshots/Capture4.PNG) |
 
 
 ## هدف پروژه
