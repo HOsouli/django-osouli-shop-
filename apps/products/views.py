@@ -58,7 +58,7 @@ def get_last_products(request, *args, **kwargs):
     product_groups=get_root_groop()
     context={
         'products': products,
-        'products_groups': product_groups
+        'product_groups': product_groups
     }
     return render(request, 'products_app/partials/last_products.html', context)
 
