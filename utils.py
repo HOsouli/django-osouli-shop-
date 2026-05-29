@@ -14,7 +14,6 @@ def generate_activation_code(length=6):
 
 # __________________________________________________________________________
 def send_sms_ir(mobile, code):
-    mobile = mobile.strip()
 
     # Normalize Mobile
     mobile = mobile.strip()
