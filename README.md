@@ -36,7 +36,7 @@
 
 ## راهنمای نصب و راه‌اندازی
 
-### ۱) ساخت و فعال‌سازی محیط مجازی (Windows)
+### ۱. ساخت و فعال‌سازی محیط مجازی (Windows)
 ```bash
 python -m venv venv
 venv\Scripts\activate
@@ -74,54 +74,46 @@ python manage.py runserver
 python manage.py collectstatic
 ```
 
-### نکات امنیتی
-تمامی اطلاعات حساس مانند SECRET_KEY، تنظیمات دیتابیس، کلیدهای API و سایر Credentials در فایل .env نگهداری می‌شوند و داخل مخزن قرار نمی‌گیرند.
-فایل‌های محلی و حساس مانند دیتابیس، محیط مجازی و تنظیمات شخصی از طریق .gitignore از ریپازیتوری مستثنی شده‌اند.
-برای محافظت از فرم‌ها در برابر درخواست‌های جعلی، از مکانیزم CSRF Protection جنگو استفاده شده است.
-دسترسی به صفحات کاربری و بخش‌های خصوصی با استفاده از LoginRequiredMixin و login_required کنترل می‌شود.
-در فرآیند ثبت‌نام و بازیابی رمز عبور، از کد تایید یک‌بارمصرف با زمان انقضا استفاده شده است.
-کدهای تایید به‌صورت موقت در cache ذخیره می‌شوند و پس از اعتبارسنجی یا پایان زمان اعتبار حذف می‌گردند.
-برای مدیریت بهتر جریان احراز هویت، از session جهت کنترل مرحله ثبت‌نام، تایید کد و بازیابی رمز عبور استفاده شده است.
-اعتبارسنجی داده‌های ورودی از طریق فرم‌های جنگو انجام می‌شود تا از ورود داده‌های نامعتبر جلوگیری شود.
-در فرآیند ثبت‌نام، بروز خطاهای همزمانی احتمالی مانند race condition نیز در سطح ایجاد کاربر در نظر گرفته شده است.
+---
+
+### امنیت و احراز هویت
+
+در این پروژه، امنیت کاربران و حفاظت از داده‌ها اولویت اصلی بوده و لایه‌های حفاظتی زیر پیاده‌سازی شده است:
+
+*   **احراز هویت دو مرحله‌ای (OTP):** طراحی سیستم ثبت‌نام و بازیابی رمز عبور بر پایه کد تایید (OTP) پیامکی. کدهای تایید در **Redis Cache** با طول عمر محدود ذخیره می‌شوند.
+*   **کنترل سطح دسترسی (Access Control):** مدیریت دسترسی با `LoginRequiredMixin` و کنترل هوشمند ورود با متد `dispatch`.
+*   **مقابله با حملات CSRF:** استفاده از دکوراتور `ensure_csrf_cookie` در نقاط حساس برای جلوگیری از حملات Cross-Site Request Forgery.
+*   **ذخیره‌سازی امن رمز عبور:** استفاده از مکانیزم هشینگ پیش‌فرض جنگو (`PBKDF2/Argon2`)؛ هیچ رمز عبوری به صورت متن خام ذخیره نمی‌شود.
+*   **اعتبارسنجی داده‌ها:** استفاده از `cleaned_data` و مدیریت خطاهای هم‌زمانی با بلوک‌های `try-except` و `IntegrityError`.
+*   **محرمانگی تنظیمات:** جداسازی کامل اطلاعات حساس با استفاده از متغیرهای محیطی در فایل `.env`.
+
+---
+
 
 
 ### Preview (Screenshots)
 در این بخش، تعدادی از تصاویر منتخب پروژه قرار داده شده است تا نمای کلی وب‌سایت فروشگاه اینترنتی و بخش‌های اصلی مانند صفحه اصلی، دسته‌بندی محصولات، لیست محصولات، جزئیات محصول، نظرات کاربران، سبد خرید، پنل کاربری، احراز هویت، بلاگ و همچنین پنل مدیریت (Admin Panel) نمایش داده شود.
 
-### User Interface (Web Pages)
-- Home Page
-- Categories & Featured Products
-- Product Listing + Filtering
-- Product Details
-- Product Reviews & Comments
-- Shopping Cart
-- User Panel / Profile
-- Register
-- Login
-- Password Recovery
-- Blog List
+#### User Interface (Client Side)
 
-![Home Page](media/images/screenshots/Capture7.PNG)
-![Categories & Featured](media/images/screenshots/Capture4.PNG)
-![Product Listing + Filters](media/images/screenshots/Capture22.PNG)
-![Product Details](media/images/screenshots/Capture17.PNG)
-![Product Reviews & Comments](media/images/screenshots/Capture18.PNG)
-![Shopping Cart](media/images/screenshots/Capture14.PNG)
-![User Panel / Profile](media/images/screenshots/Capture9.PNG)
-![Register](media/images/screenshots/Capture29.PNG)
-![Login](media/images/screenshots/Capture30.PNG)
-![Password Recovery](media/images/screenshots/Capture6.PNG)
-![Blog List](media/images/screenshots/Capture12.PNG)
+| Core Features | Product & Order Management | Content & User Interaction |
+|---|---|---|
+| ![Main Page](docs/screenshots/Capture7.PNG) | ![Advanced Filtering](docs/screenshots/Capture22.PNG) | ![Product Tabs](cdocs/screenshots/Capture4.PNG) |
+| ![Product Details](docs/screenshots/Capture17.PNG) | ![Order Checkout](docs/screenshots/Capture20.PNG) | ![Blog Section](docs/screenshots/Capture12.PNG) |
+| ![Shopping Cart](docs/screenshots/Capture14.PNG) | ![User Dashboard](docs/screenshots/Capture9.PNG) | ![Authentication](docs/screenshots/Capture30.PNG) |
+| ![Registration](docs/screenshots/Capture29.PNG) | ![Mobile View](docs/screenshots/Capture19.PNG) | |
 
+#### Admin Panel
 
-### Admin Panel (Django Admin)
-- Admin Dashboard / Products Management
-- Add / Edit Product Form
+| Dashboard | Management | Transactions |
+|---|---|---|
+| ![Admin Dashboard](docs/screenshots/Capture.PNG) | ![Product Management](docs/screenshots/Capture0.PNG) | ![Order Details](docs/screenshots/Capture1.PNG) |
 
-![Admin Dashboard](media/images/screenshots/Capture.PNG)
-![Admin - Products](media/images/screenshots/Capture0.PNG)
-![Admin - Add/Edit Product](media/images/screenshots/Capture1.PNG)
+#### Project Architecture
+
+| File Structure |
+|---|
+| ![Project Structure](docs/screenshots/Capture15.PNG) |
 
 
 ## هدف پروژه
