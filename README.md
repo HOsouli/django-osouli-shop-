@@ -101,7 +101,7 @@ python manage.py collectstatic
 | ![Main Page](docs/screenshots/Capture7.PNG) | ![Advanced Filtering](docs/screenshots/Capture22.PNG) | ![Product Tabs](docs/screenshots/Capture4.PNG) |
 | ![Product Details](docs/screenshots/Capture17.PNG) | ![Order Checkout](docs/screenshots/Capture20.PNG) | ![Blog Section](docs/screenshots/Capture29.PNG) |
 | ![Shopping Cart](docs/screenshots/Capture14.PNG) | ![User Dashboard](docs/screenshots/Capture9.PNG) | ![Authentication](docs/screenshots/Capture30.PNG) |
-| ![Registration](docs/screenshots/Capture22.PNG) | ![Mobile View](docs/screenshots/Capture19.PNG) | ![Registration](..docs/screenshots/reg-screen.png) |
+| ![Registration](docs/screenshots/Capture22.PNG) | ![Mobile View](docs/screenshots/Capture19.PNG) | ![Registration](docs/screenshots/reg-screen.png) |
 
 
 #### Admin Panel
